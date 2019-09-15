@@ -119,7 +119,7 @@ def get_audio_from_the_db(user_id):
     
     mp3_data = base64.b64decode(b64_str)
     #print(mp3_data)
-    save_audio = "./sample_audio/{}_audio.mp3".format(user_id)
+    save_audio = "./sample_audio/{}_audio.wav".format(user_id)
     fnew = open(save_audio, "wb")
     fnew.write(mp3_data)
     fnew.close()
