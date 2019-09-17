@@ -1,25 +1,27 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[15]:
 
 
 from flask import Flask, request, jsonify
 import base64
+import os,sys
 import numpy as np
 import librosa
 import tensorflow as tf
 from firebase import Firebase
 from keras.models import load_model
+from pydub import AudioSegment
 
 
-# In[ ]:
+# In[2]:
 
 
 app = Flask(__name__)
 
 
-# In[ ]:
+# In[3]:
 
 
 # load model
@@ -27,14 +29,14 @@ global model
 model = load_model('./model/hsv_cnn.hdf5')
 
 
-# In[ ]:
+# In[4]:
 
 
 global graph
 graph = tf.get_default_graph()
 
 
-# In[ ]:
+# In[5]:
 
 
 config = {
@@ -47,13 +49,13 @@ config = {
 firebase = Firebase(config)
 
 
-# In[ ]:
+# In[6]:
 
 
 db = firebase.database()
 
 
-# In[ ]:
+# In[7]:
 
 
 @app.route('/', methods = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'])
@@ -61,7 +63,7 @@ def index():
     return "Welcome to hsv project"
 
 
-# In[ ]:
+# In[8]:
 
 
 @app.route('/predict', methods = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'])
@@ -83,35 +85,11 @@ def predict():
 })
 
 
-# In[ ]:
+# In[73]:
 
 
 def get_audio_from_the_db(user_id):
     users = db.child("users").get()
-    #print(users.val()[user_id])
-    
-    # pick sound file you have in working directory
-    # or give full path
-    #sound_file = "./heart_sound_discrimination_model_classifire/data/UrbanSound8K/audio/test/207214-2-0-126.wav"
-    
-    # use mode = "rb" to read binary file
-    #fin = open(sound_file, "rb")
-    #binary_data = fin.read()
-    #fin.close()
-    
-    # encode binary to base64 string (printable)
-    #b64_data = base64.b64encode(binary_data)
-    #b64_fname = "original_b64.txt"
-    
-    # save base64 string to given text file
-    #fout = open(b64_fname, "wb")
-    #fout.write(b64_data)
-    #fout.close
-    
-    # read base64 string back in
-    #fin = open(b64_fname, "r")
-    #b64_str = fin.read()
-    #fin.close()
     
     b64_str = users.val()[user_id]['audio']
     
@@ -119,14 +97,29 @@ def get_audio_from_the_db(user_id):
     
     mp3_data = base64.b64decode(b64_str)
     #print(mp3_data)
-    save_audio = "./sample_audio/{}_audio.wav".format(user_id)
+    audio_name = "{}_audio.mp4".format(user_id)
+    save_audio = "./sample_audio/{}".format(audio_name)
     fnew = open(save_audio, "wb")
     fnew.write(mp3_data)
     fnew.close()
-    return save_audio
+    path = convertMp4Towav(save_audio)
+    return path
 
 
-# In[ ]:
+# In[100]:
+
+
+def convertMp4Towav(pathmp4):
+    root = "./sample_audio/"
+    wav_filename = os.path.splitext(os.path.basename(pathmp4))[0] + '.wav'
+    print(pathmp4)
+    wav_path = root+wav_filename
+    AudioSegment.from_file(pathmp4).export(wav_path, format='wav')
+    print(wav_path)
+    return wav_path
+
+
+# In[101]:
 
 
 def predict_class_of_the_audio_file(audio_path):
@@ -155,17 +148,17 @@ def predict_class_of_the_audio_file(audio_path):
     return class_of_audio
 
 
+# In[102]:
+
+
+print(predict())
+
+
 # In[ ]:
 
 
-#print(predict_heart_sound())
-
-
-# In[ ]:
-
-
-if __name__ == '__main__':
-    app.run()
+#if __name__ == '__main__':
+  #  app.run()
 
 
 # In[ ]:
