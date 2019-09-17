@@ -85,7 +85,7 @@ def predict():
 })
 
 
-# In[73]:
+# In[1]:
 
 
 def get_audio_from_the_db(user_id):
@@ -97,7 +97,7 @@ def get_audio_from_the_db(user_id):
     
     mp3_data = base64.b64decode(b64_str)
     #print(mp3_data)
-    audio_name = "{}_audio.mp4".format(user_id)
+    audio_name = "{}_audio.txt".format(user_id)
     save_audio = "./sample_audio/{}".format(audio_name)
     fnew = open(save_audio, "wb")
     fnew.write(mp3_data)
