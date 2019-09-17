@@ -151,14 +151,14 @@ def predict_class_of_the_audio_file(audio_path):
 # In[102]:
 
 
-print(predict())
+#print(predict())
 
 
 # In[ ]:
 
 
-#if __name__ == '__main__':
-  #  app.run()
+if __name__ == '__main__':
+    app.run()
 
 
 # In[ ]:
