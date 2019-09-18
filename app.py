@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[15]:
+# In[17]:
 
 
 from flask import Flask, request, jsonify
 import base64
-import os,sys
 import numpy as np
+import os
 import librosa
 import tensorflow as tf
 from firebase import Firebase
@@ -77,7 +77,7 @@ def predict():
     result = predict_class_of_the_audio_file(audio_path)
     #amp_vals = [str(i) for i in amplitude_loader(audio_path)]
     print(result)
-    #return all_result
+    #return result
     return jsonify({
     "user_id": user_id,
     "result": str(result[0]),
@@ -85,7 +85,7 @@ def predict():
 })
 
 
-# In[1]:
+# In[9]:
 
 
 def get_audio_from_the_db(user_id):
@@ -102,24 +102,25 @@ def get_audio_from_the_db(user_id):
     fnew = open(save_audio, "wb")
     fnew.write(mp3_data)
     fnew.close()
-    path = convertMp4Towav(save_audio)
+    path = convertMp4Towav(audio_name)
     return path
 
 
-# In[100]:
+# In[14]:
 
 
-def convertMp4Towav(pathmp4):
-    root = "./sample_audio/"
-    wav_filename = os.path.splitext(os.path.basename(pathmp4))[0] + '.wav'
-    print(pathmp4)
-    wav_path = root+wav_filename
-    AudioSegment.from_file(pathmp4).export(wav_path, format='wav')
+def convertMp4Towav(audio_name):
+    path = "./sample_audio/"
+    wav_filename = audio_name[:-4] + '.wav'
+    print(audio_name)
+    wav_path = path+wav_filename
+    AudioSegment.from_file(path+audio_name).export(wav_path, format='wav')
     print(wav_path)
+    os.remove(path+audio_name)
     return wav_path
 
 
-# In[101]:
+# In[15]:
 
 
 def predict_class_of_the_audio_file(audio_path):
@@ -148,7 +149,7 @@ def predict_class_of_the_audio_file(audio_path):
     return class_of_audio
 
 
-# In[102]:
+# In[18]:
 
 
 #print(predict())
