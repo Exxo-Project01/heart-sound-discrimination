@@ -1,0 +1,73 @@
+[I 21:46:21.933 NotebookApp] JupyterLab extension loaded from /home/asitha/anaconda3/lib/python3.7/site-packages/jupyterlab
+[I 21:46:21.933 NotebookApp] JupyterLab application directory is /home/asitha/anaconda3/share/jupyter/lab
+[I 21:46:21.936 NotebookApp] Serving notebooks from local directory: /home/asitha/Documents/heart-sound-discrimination
+[I 21:46:21.937 NotebookApp] The Jupyter Notebook is running at:
+[I 21:46:21.937 NotebookApp] http://localhost:8888/?token=a46e868a20db01a13250fba0b9e8e8f7886b97fc26905241
+[I 21:46:21.937 NotebookApp]  or http://127.0.0.1:8888/?token=a46e868a20db01a13250fba0b9e8e8f7886b97fc26905241
+[I 21:46:21.937 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 21:46:22.558 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/asitha/.local/share/jupyter/runtime/nbserver-4151-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=a46e868a20db01a13250fba0b9e8e8f7886b97fc26905241
+     or http://127.0.0.1:8888/?token=a46e868a20db01a13250fba0b9e8e8f7886b97fc26905241
+[E 21:46:24.609 NotebookApp] Could not open static file ''
+[W 21:46:24.799 NotebookApp] 404 GET /static/components/react/react-dom.production.min.js (127.0.0.1) 44.15ms referer=http://localhost:8888/tree?token=a46e868a20db01a13250fba0b9e8e8f7886b97fc26905241
+[W 21:46:25.092 NotebookApp] 404 GET /static/components/react/react-dom.production.min.js (127.0.0.1) 1.65ms referer=http://localhost:8888/tree?token=a46e868a20db01a13250fba0b9e8e8f7886b97fc26905241
+[W 21:46:32.725 NotebookApp] 404 GET /static/components/react/react-dom.production.min.js (127.0.0.1) 7.98ms referer=http://localhost:8888/notebooks/app.ipynb
+[W 21:46:32.861 NotebookApp] 404 GET /static/components/react/react-dom.production.min.js (127.0.0.1) 2.85ms referer=http://localhost:8888/notebooks/app.ipynb
+[I 21:46:35.362 NotebookApp] Kernel started: 833aea3e-2e4a-46ec-a705-e69dede1b369
+[I 21:46:36.670 NotebookApp] Adapting from protocol version 5.1 (kernel 833aea3e-2e4a-46ec-a705-e69dede1b369) to 5.3 (client).
+[I 21:51:25.665 NotebookApp] Kernel interrupted: 833aea3e-2e4a-46ec-a705-e69dede1b369
+2019-09-18 21:52:30.739604: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-09-18 21:52:31.277418: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2712000000 Hz
+2019-09-18 21:52:31.314011: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x563dc785a670 executing computations on platform Host. Devices:
+2019-09-18 21:52:31.314204: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-09-18 21:52:31.373380: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-09-18 21:52:31.636570: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-09-18 21:52:31.638210: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce 940MX major: 5 minor: 0 memoryClockRate(GHz): 1.2415
+pciBusID: 0000:01:00.0
+2019-09-18 21:52:31.638904: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory
+2019-09-18 21:52:31.639412: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory
+2019-09-18 21:52:31.639828: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory
+2019-09-18 21:52:31.640230: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory
+2019-09-18 21:52:31.640665: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory
+2019-09-18 21:52:31.641202: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Could not dlopen library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory
+2019-09-18 21:52:34.079156: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-09-18 21:52:34.079349: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1663] Cannot dlopen some GPU libraries. Skipping registering GPU devices...
+2019-09-18 21:52:34.384265: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-18 21:52:34.384419: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2019-09-18 21:52:34.384467: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2019-09-18 21:52:34.393579: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1005] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-09-18 21:52:34.395040: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x563dc8002b50 executing computations on platform CUDA. Devices:
+2019-09-18 21:52:34.395147: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): GeForce 940MX, Compute Capability 5.0
+[I 21:52:35.215 NotebookApp] Saving file at /app.ipynb
+2019-09-18 21:52:36.292971: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+[I 21:54:35.224 NotebookApp] Saving file at /app.ipynb
+[I 21:56:35.193 NotebookApp] Saving file at /app.ipynb
+[I 21:58:35.215 NotebookApp] Saving file at /app.ipynb
+[I 22:00:35.183 NotebookApp] Saving file at /app.ipynb
+[I 22:02:35.184 NotebookApp] Saving file at /app.ipynb
+[I 22:06:35.183 NotebookApp] Saving file at /app.ipynb
+[I 22:08:35.184 NotebookApp] Saving file at /app.ipynb
+[I 22:10:35.184 NotebookApp] Saving file at /app.ipynb
+[I 22:12:35.185 NotebookApp] Saving file at /app.ipynb
+[I 22:14:35.187 NotebookApp] Saving file at /app.ipynb
+[I 22:16:35.191 NotebookApp] Saving file at /app.ipynb
+[I 22:18:35.217 NotebookApp] Saving file at /app.ipynb
+[I 23:24:35.230 NotebookApp] Saving file at /app.ipynb
+[I 23:26:35.216 NotebookApp] Saving file at /app.ipynb
+[I 23:34:35.217 NotebookApp] Saving file at /app.ipynb
+[I 23:36:35.250 NotebookApp] Saving file at /app.ipynb
+[I 23:38:35.224 NotebookApp] Saving file at /app.ipynb
+[I 23:40:35.242 NotebookApp] Saving file at /app.ipynb
+[I 23:42:35.241 NotebookApp] Saving file at /app.ipynb
+[I 23:44:35.216 NotebookApp] Saving file at /app.ipynb
+[I 23:46:35.242 NotebookApp] Saving file at /app.ipynb
+[I 00:42:35.239 NotebookApp] Saving file at /app.ipynb
+[I 00:46:35.235 NotebookApp] Saving file at /app.ipynb
+[I 00:57:37.443 NotebookApp] Saving file at /app.ipynb
+[I 00:57:37.946 NotebookApp] Saving file at /app.ipynb
+[I 00:57:54.704 NotebookApp] Starting buffering for 833aea3e-2e4a-46ec-a705-e69dede1b369:0e785ac8971b45788fdc9f30e3615bc9
