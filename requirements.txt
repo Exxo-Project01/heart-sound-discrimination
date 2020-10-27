@@ -7,7 +7,7 @@ cffi==1.12.3
 chardet==3.0.4
 Click==7.0
 crypto==1.4.1
-cryptography==2.7
+cryptography==3.2
 decorator==4.4.0
 firebase==3.0.1
 Flask==1.1.1
